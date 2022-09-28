@@ -239,6 +239,10 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   getMedicinesByDb() async {
     getMedicinesList = await GetMedicinesList;
+    print("Printing the last uploaded medicine: " +
+        getMedicinesList[getMedicinesList.length - 1].name +
+        " with id: " +
+        (getMedicinesList[getMedicinesList.length - 1].id).toString());
     setState(() {
       flg = false;
     });

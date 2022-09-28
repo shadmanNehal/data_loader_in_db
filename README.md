@@ -1,4 +1,4 @@
-# hyd_initial_data_loading
+Data loader for copying db in another app.
 
 A new Flutter project.
 

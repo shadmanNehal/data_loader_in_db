@@ -202,6 +202,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   getConditionByDb() async {
     getConditionList = await GetConditionList;
+    print(
+        "Condition id 2192: ${getConditionList[2191].name} and image name: ${getConditionList[2191].images}");
     setState(() {
       flg = false;
     });
@@ -276,9 +278,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
     List<UnwellList> insertUnwellList = new List<UnwellList>();
     insertUnwellList = [
       UnwellList(null, "Other", "assets/images/Disease test 5.png"),
-      UnwellList(null, "Zika Virus", "assets/images/generic.png"),
-      UnwellList(null, "West Nile Virus", "assets/images/generic.png"),
-      UnwellList(null, "Yellow Fever", "assets/images/generic.png"),
+      UnwellList(null, "Acne", "assets/images/generic.png"),
+      UnwellList(null, "Influenza", "assets/images/generic.png"),
+      UnwellList(null, "Stress", "assets/images/generic.png"),
       UnwellList(null, "Skin Disorder", "assets/images/Skin Disorder.png"),
       UnwellList(null, "Stomach Aches", "assets/images/Stomach Aches.png"),
       UnwellList(null, "Headaches", "assets/images/Headaches.png"),
@@ -489,8 +491,11 @@ class _LoadingScreenState extends State<LoadingScreen> {
               ),
             ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print('Pressed');
+        onPressed: () async {
+          // int id = await dbHelper.deleteAllDefaultUnwellCondition();
+          // print(" Conditions is deleted");
+          // print(id);
+          // print('FloatingActionButton');
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),

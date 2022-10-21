@@ -134,6 +134,11 @@ class DBHelper {
     return condtionList;
   }
 
+  Future<int> deleteAllCondition() async {
+    var dbClient = await db;
+    return dbClient.rawDelete("DELETE FROM tblConditions");
+  }
+
   //=== End Conditions List
 
   //=======================================================================
@@ -611,6 +616,11 @@ class DBHelper {
       'DELETE FROM tblUnwellDefaultList WHERE stConditonName = ?',
       [stConditionName],
     );
+  }
+
+  Future<int> deleteAllDefaultUnwellCondition() async {
+    var dbClient = await db;
+    return dbClient.rawDelete("DELETE FROM tblUnwellDefaultList");
   }
 
   Future<List<UnwellList>> getDefaultUnwellList() async {
